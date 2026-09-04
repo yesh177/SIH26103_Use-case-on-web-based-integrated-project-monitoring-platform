@@ -18,12 +18,14 @@ Rather than building another monitoring dashboard, the system is designed to sur
 
 ## 2 · Problem
 
-India's public infrastructure projects are tracked through platforms such as the Online Computerised Monitoring System (OCMS). These systems capture Cost Utilisation Factor (CUF) variables and milestone data, but monitoring remains largely **retrospective**:
+India's public infrastructure projects are tracked through platforms such as the Online Computerised Monitoring System (OCMS). These systems capture Cost Utilisation Factor (CUF) variables and milestone data, providing a rich foundation for monitoring.
 
-- Overruns are identified *after* they occur, not predicted in advance.
-- There is no systematic ranking of projects by predicted risk severity.
-- The drivers behind overruns are not surfaced in an explainable, actionable form.
-- Conventional statistical indicators and potential ML-based approaches have not been compared side-by-side on the same feature set.
+Existing project-monitoring data provides an opportunity to build an additional **predictive decision-support layer** that can identify potential future risks before they materialise. Specific opportunities include:
+
+- Predicting cost and schedule overruns *before* they occur, rather than identifying them after the fact.
+- Systematically ranking projects by predicted risk severity to support resource allocation.
+- Surfacing the drivers behind overruns in an explainable, actionable form.
+- Comparing conventional statistical indicators with ML-based approaches on the same feature set.
 
 ---
 
@@ -33,7 +35,7 @@ Build a modular analytics layer that can sit alongside existing monitoring platf
 
 | Capability | Purpose |
 |---|---|
-| **Risk prediction** | Estimate the probability and magnitude of cost-overrun and schedule-overrun for each project. |
+| **Risk prediction** | Estimate the probability/risk of future cost and schedule overruns for each project. |
 | **Risk ranking** | Prioritise projects by predicted risk to support resource allocation. |
 | **Explainability** | Surface the top contributing factors behind each prediction (e.g., SHAP values, feature importance). |
 | **Approach comparison** | Benchmark conventional/statistical methods against ML approaches on the same data. |
@@ -54,7 +56,9 @@ Build a modular analytics layer that can sit alongside existing monitoring platf
 
 ---
 
-## 5 · High-Level Architecture
+## 5 · High-Level Architecture (Planned)
+
+The diagram below shows the intended system architecture. Not all components are implemented yet.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -106,13 +110,21 @@ paimana-predictive-risk/
 | Phase | Status |
 |---|---|
 | Repository scaffolding | ✅ Complete |
-| Problem framing & literature review | 🔄 In progress |
-| Data acquisition strategy | 🔲 Planned |
-| Feature engineering | 🔲 Planned |
-| Baseline statistical models | 🔲 Planned |
-| ML model development | 🔲 Planned |
-| Explainability integration | 🔲 Planned |
-| Web-based presentation layer | 🔲 Planned |
+| Initial PAIMANA data acquisition/extraction | ✅ Complete |
+| May–July 2026 project-month dataset | ✅ Prepared |
+| Data validation | 🔄 In progress |
+| Historical data expansion | 🔄 In progress |
+| Point-in-time feature design | 🔲 Planned |
+| Future-outcome/label construction | 🔲 Planned |
+| Statistical baseline | 🔲 Planned |
+| ML baseline | 🔲 Planned |
+| Advanced ML comparison | 🔲 Planned |
+| Explainability | 🔲 Planned |
+| Risk ranking & intervention layer | 🔲 Planned |
+| Web presentation layer | 🔲 Planned |
+
+> [!NOTE]
+> The current May–July 2026 dataset is an initial project-month dataset used for data understanding and pipeline development. It is not being presented as the final training dataset. Additional historical reporting periods are being acquired to support robust point-in-time temporal modelling.
 
 > [!NOTE]
 > No models have been trained yet. No performance metrics or accuracy figures are available at this stage. All capabilities listed above describe the **intended** system design.
@@ -125,7 +137,7 @@ paimana-predictive-risk/
 |---|---|---|
 | Language | Python 3.10+ | Confirmed |
 | Data processing | Pandas, NumPy | Confirmed |
-| Visualisation | Matplotlib, Seaborn | Tentative |
+| Visualisation | Matplotlib | Confirmed |
 | ML frameworks | Scikit-learn, XGBoost / LightGBM | Tentative |
 | Explainability | SHAP, feature-importance methods | Tentative |
 | Web framework | Flask / Streamlit / Dash | Tentative |
@@ -138,14 +150,19 @@ paimana-predictive-risk/
 
 ## 9 · Roadmap
 
-1. **Data strategy** — Define data requirements; source or synthesise representative datasets.
-2. **Exploratory analysis** — Understand variable distributions, correlations, and baseline overrun patterns.
-3. **Feature engineering** — Derive predictive features beyond raw CUF variables.
-4. **Baseline modelling** — Implement conventional statistical approaches for cost- and time-overrun prediction.
-5. **ML modelling** — Train and evaluate ML models; compare against baselines.
-6. **Explainability** — Integrate interpretability methods; surface risk drivers per project.
-7. **Presentation layer** — Build a web interface for risk ranking, explanations, and early warnings.
-8. **Validation & documentation** — End-to-end testing, documentation, and SIH submission.
+1. **Data acquisition and provenance** — Source project-monitoring data; document provenance and scope.
+2. **Project-month dataset construction** — Build structured project-month observations from raw reports.
+3. **Data validation and exploratory analysis** — Validate data quality; understand distributions, correlations, and baseline overrun patterns.
+4. **Historical panel expansion** — Acquire additional reporting periods to enable temporal modelling.
+5. **Point-in-time feature engineering** — Derive predictive features using only information available at prediction time.
+6. **Future outcome/label construction** — Define and construct target variables for cost- and schedule-overrun prediction.
+7. **Statistical baseline** — Implement conventional statistical approaches as a benchmark.
+8. **ML baseline and model comparison** — Train and evaluate ML models; compare against statistical baselines.
+9. **CUF vs enhanced-feature experiment** — Evaluate standard CUF variables against engineered predictive features.
+10. **Explainability and risk-driver analysis** — Integrate interpretability methods; surface risk drivers per project.
+11. **Risk ranking and intervention prioritisation** — Rank projects by composite risk; support intervention decisions.
+12. **Web/API integration** — Build a presentation layer for risk rankings, explanations, and early warnings.
+13. **End-to-end validation and SIH demonstration** — Full pipeline testing, documentation, and submission.
 
 ---
 

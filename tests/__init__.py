@@ -1,0 +1,1 @@
+"""PAIMANA test suite package."""
