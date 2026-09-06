@@ -1,4 +1,4 @@
-# MASTER PRODUCT REQUIREMENTS DOCUMENT (PRD)
+# PRODUCT REQUIREMENTS DOCUMENT (PRD)
 ## PAIMANA PREDICTIVE RISK INTELLIGENCE
 ### Integrated Decision-Support Platform for Central Infrastructure Monitoring
 
