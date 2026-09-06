@@ -114,7 +114,7 @@ Output of the Phase 4 multi-hazard scoring engine ($N=437$ records).
 | `attention_score` | Float | No | $[0.0, 1.0]$ | $\max(P_c, P_s)$ if FULL; $P_c$ if PARTIAL. |
 | `compound_exposure` | Float | Yes | $[0.0, 1.0]$ if FULL; `NULL` if PARTIAL | $\min(P_c, P_s)$ measuring co-occurring high risk across hazards. |
 | `attention_tier` | String | No | `Tier 1`, `Tier 2`, `Tier 3`, `Tier 4` | Quantile-based priority tier. |
-| `portfolio_rank` | Integer | No | $1 \le 	ext{rank} \le 419$ | Dense min-rank descending by `attention_score`. |
+| `portfolio_rank` | Integer | No | $1 \le \text{rank} \le 419$ | Standard Competition Ranking (rank(method='min', ascending=False)) descending by `attention_score`. |
 | `cost_model_name` | String | No | `RandomForestClassifier` | Frozen candidate architecture. |
 | `schedule_model_name` | String | No | `RandomForestClassifier` | Frozen candidate architecture. |
 | `cost_probability_variant` | String | No | `raw_uncalibrated` | Empirical selection from Phase 6. |

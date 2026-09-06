@@ -335,7 +335,7 @@ $$\text{compound\_exposure} = \begin{cases} \min(P_c, P_s) & \text{if } \text{ri
 # 15. Risk Ranking
 
 ### 15.1 Portfolio Ranking
-* **Method**: Dense minimum rank (`rank(method='min', ascending=False)`) descending by `attention_score`.
+* **Method**: Standard Competition Ranking (`rank(method='min', ascending=False)`) descending by `attention_score`.
 * **Tie Handling**: Tied scores receive identical ranks; subsequent ranks skip accordingly (resulting in ranks 1 through 419 across 437 projects).
 
 ### 15.2 Empirical Quantile Attention Tiers
@@ -450,7 +450,7 @@ As defined in the Phase 8 engineering handoff, the frontend consists of 5 respon
 
 # 21. Backend Requirements
 
-FastAPI/Express services exposing standard RESTful JSON interfaces:
+FastAPI services exposing standard RESTful JSON interfaces:
 
 ```text
 GET /projects                                 -> Paginated project catalog with tier/coverage filters
@@ -524,7 +524,7 @@ PostgreSQL schema enforcing relational integrity with `canonical_project_key` as
 | **Data & AI Lead** | Data/AI Team | Canonical snapshot ingestion, identity resolution, PIT feature extraction, model benchmarking, probability calibration, risk scoring, explainability, and intervention logic. |
 | **Backend Engineering** | Backend Team | Provisioning FastAPI REST services, implementing the 7 endpoint contracts, error handling, pagination, and OpenAPI documentation. |
 | **Database Administration** | Database Team | Provisioning PostgreSQL 15+ relational schema, defining tables, foreign keys, indexes, and ETL seeding from frozen CSVs. |
-| **Frontend UI/UX** | Frontend Team | Building the 5 core Next.js/React components, implementing responsive Tailwind layouts, coverage badge states, and null rendering. |
+| **Frontend UI/UX** | Frontend Team | Building the 5 core React 18 / Vite components, implementing responsive Tailwind layouts, coverage badge states, and null rendering. |
 | **Integration & QA** | Joint Engineering | End-to-end integration testing, schema contract validation, and full automated test suite execution. |
 | **Product & Pitch** | Executive Team | Hackathon pitch deck, live interactive demo execution, technical storytelling, and safe claims governance. |
 

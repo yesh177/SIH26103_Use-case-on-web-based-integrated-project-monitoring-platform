@@ -38,7 +38,7 @@ flowchart TD
         E7["GET /portfolio/summary"]
     end
 
-    subgraph FrontendApp ["Next.js / React UI Client"]
+    subgraph FrontendApp ["React 18 / Vite / TypeScript UI Client"]
         C1["Portfolio Overview Dashboard"]
         C2["Risk Ranking Leaderboard"]
         C3["Project Detail Profile"]
@@ -191,7 +191,7 @@ CREATE INDEX idx_interventions_action ON project_intervention_priorities(primary
 
 ## 3. Backend API Specification (7 REST Endpoints)
 
-The backend must be implemented using FastAPI (Python) or Express/NestJS (TypeScript). All endpoints return standard JSON payloads.
+The backend must be implemented using FastAPI (Python 3.11+). All endpoints return standard JSON payloads.
 
 > [!NOTE]
 > **Field Normalization Note**: The backend is responsible for normalizing physical storage representations to API contract formats. Specifically, the frozen CSV stores probability variants as `"Raw / Uncalibrated"`, which the backend must normalize and serialize to `"raw_uncalibrated"` in all REST responses. Do not modify the underlying frozen CSV artifact.
@@ -375,7 +375,7 @@ The backend must be implemented using FastAPI (Python) or Express/NestJS (TypeSc
 
 ## 4. Frontend UI/UX Specification (5 Core Screens & Components)
 
-Frontend engineers must build the following five components using React/Next.js and Tailwind CSS (or equivalent component library).
+Frontend engineers must build the following five components using React 18 (Vite, TypeScript) and Tailwind CSS (or equivalent component library).
 
 ### 4.1 Screen 1: Portfolio Overview Dashboard
 * **Header KPI Cards**:
