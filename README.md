@@ -193,7 +193,7 @@ paimana-predictive-risk/
 ```bash
 # 1. Clone the repository
 git clone https://github.com/yesh177/SIH26103_Use-case-on-web-based-integrated-project-monitoring-platform.git
-cd paimana-predictive-risk
+cd SIH26103_Use-case-on-web-based-integrated-project-monitoring-platform
 
 # 2. Create and activate a virtual environment
 python -m venv venv

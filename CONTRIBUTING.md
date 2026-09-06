@@ -69,7 +69,7 @@ When contributing, you MUST NOT modify:
 ```bash
 # Clone the repository
 git clone https://github.com/yesh177/SIH26103_Use-case-on-web-based-integrated-project-monitoring-platform.git
-cd paimana-predictive-risk
+cd SIH26103_Use-case-on-web-based-integrated-project-monitoring-platform
 
 # Create and activate virtual environment
 python -m venv venv
